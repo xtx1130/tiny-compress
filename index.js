@@ -16,7 +16,10 @@ let orginToCompress = []
 
 class Tinier{
   constructor(opts){
-    this.setConfig.call(null, opts)
+    [this.key, this.inDir, this.outDir] = [void 0]
+    opts = opts || Object.create(Object.prototype)
+    this.setConfig.call(this, opts)
+    this[setTinyKey]()
   }
   [setTinyKey](){
     tinify.key = this.key
@@ -25,9 +28,10 @@ class Tinier{
     this.key = opts.key || 'dh-9FQbZX3vxYjfpJFX5Do3Oa86QJNBa'
     this.inDir = opts.inDir || path.join(process.cwd(), './images')
     this.outDir = opts.outDir || path.join(process.cwd(), './tinyout')
+    this[setTinyKey]()
     return this
   }
-  main(){
+  compress(){
     return new Promise((resolve, reject) => {
       klaw(this.inDir).on('data', async item => {
         let fileName = path.parse(item.path).base
@@ -42,3 +46,5 @@ class Tinier{
     })
   }
 }
+
+exports = module.exports = Tinier
