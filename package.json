@@ -1,0 +1,51 @@
+{
+  "name": "tiny-compress",
+  "version": "1.0.0",
+  "description": "tiny png compress picture",
+  "main": "index.js",
+  "scripts": {
+    "test": "cd test && jest --forceExit",
+    "lint": "npx standard \"./index.js\" --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xtx1130/tiny-compress.git"
+  },
+  "keywords": [
+    "tiny",
+    "picture",
+    "compress"
+  ],
+  "author": "xtx1130@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xtx1130/tiny-compress/issues"
+  },
+  "homepage": "https://github.com/xtx1130/tiny-compress#readme",
+  "dependencies": {
+    "klaw": "^2.1.1",
+    "tinify": "^1.5.0"
+  },
+  "jest": {
+    "testMatch": [
+      "**/test/**/test.js"
+    ],
+    "coverageDirectory": "./coverage",
+    "collectCoverage": true,
+    "coverageReporters": [
+      "json",
+      "lcov",
+      "text"
+    ],
+    "collectCoverageFrom": [
+      "!**/node_modules/**",
+      "!**/test/**",
+      "**/*.js",
+      "!**/coverage/**"
+    ]
+  },
+  "devDependencies": {
+    "jest": "^22.1.4",
+    "standard": "^10.0.3"
+  }
+}
