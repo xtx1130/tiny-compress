@@ -4,4 +4,4 @@ const Tiny = require('./../')
 
 let tiny = new Tiny()
 
-tiny.compress()
+tiny.compress().then(res => console.log(res))
