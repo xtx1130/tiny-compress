@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "cd test && jest --forceExit",
-    "lint": "npx standard \"./index.js\" --fix"
+    "lint": "npx standard \"./index.js\" --fix",
+    "cov": "npm run test -- --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "repository": {
     "type": "git",
@@ -47,6 +48,7 @@
     ]
   },
   "devDependencies": {
+    "coveralls": "^3.0.0",
     "jest": "^22.1.4",
     "standard": "^10.0.3"
   }
