@@ -1,5 +1,6 @@
 /*
  *@description 使用tinypng.com接口实现图片压缩
+ *@author xtx1130@gmail.com
  *@param {Object} opts
  *@param {String} opts.key tinypng.com用户唯一识别码
  **@param {String} opts.inDir 源文件存储地址
